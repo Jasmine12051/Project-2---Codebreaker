@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>CS 325: Codebreaker!</title>
+    <script type="text/javascript" src="jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+
+</head>
+
+<body>
+
+    <h1>Welcome to Codebreaker!</h1>
+
+    <p>(For more information about how to play this game, click <a href="howtoplay.html">here</a>.)</p>
+
+    <form id="gameform" onsubmit="return false;">
+
+        <fieldset>
+
+            <legend>Enter your guesses here ...</legend>
+
+            <table>
+
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                </tr>
+
+                <tr id="pegslots">
+
+                    <td><label for="slot0">What is your guess?</label></td>
+
+                </tr>
+
+            </table>
+
+            <p><input type="submit" value="Guess" onClick="P2.guess();"></p>
+
+        </fieldset>
+
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+
+        $(function () {
+            P2.start();
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Master Mind</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <article>
+
+        <h1>Master Mind</h1>
+
+        <h2>(From <em>The Playboy Winner's Guide to Board Games</em> by Jon Freeman, Chicago: Playboy Press, 1979. ISBN
+            #0-872-16562-0.)</h2>
+
+        <p>Unless you've spent the last five years in exile on the island of Fernando Poo, you must have seen or heard
+            of
+            <strong>Master Mind</strong> (Invicta Plastics Ltd., USA), the most successful game of recent times; it has
+            sold
+            tens of millions of copies in half a dozen versions and inspired a multitude of derivatives and imitations.
+        </p>
+
+        <p>While not at all complicated, <strong>Master Mind</strong> is (unlike chess or go or
+            <strong>Othello</strong>)
+            asymmetrical: that is, the two players involved do not begin with identical positions and goals. One, the
+            codemaker, drawing from a group of pegs of six different colors, sets up a hidden "code" of four pegs. His
+            opponent, the codebreaker, then attempts to guess the code—to duplicate it on the board—first at random and
+            then
+            by using logic to deduce the answer from clues given by the codemaker. These clues are simply a variation of
+            a
+            guessing game known to every child: a formalized way of saying, "You're cold ... you're warm ... you're
+            hot."
+            Every time the codebreaker makes a guess—by placing a row of "code pegs" he hopes will duplicate the hidden
+            code—the codemaker places, next to the row, a black "key peg" for every code peg that is the right color and
+            in
+            the right position (that is, that corresponds <em>exactly</em> to one element of the code) and a white key
+            peg
+            for each code peg that is of the right color but <em>not</em> in the right place. The codemaker never states
+            which key pegs go with which code pegs—that's something the codebreaker has to figure out along the way.
+        </p>
+
+        <p>After the codebreaker has deduced the code, the two players trade places and roles. Whoever guesses the
+            other's
+            code in the fewest number of rows wins the round. Alternatively, players may keep a running total over any
+            number of rounds. While some people, particularly under the stress of formal competition, may take forever,
+            a
+            complete two-game round should take less than half an hour, and fifteen minutes is more typical. With
+            practice,
+            you should be able to guess the code in an average of five rows or less.<a href="#note1">[&sup1;]</a></p>
+
+        <p>Since <strong>Master Mind</strong> is essentially a game of code<em>breaking</em>, the analysis that follows
+            concentrates on the inferences that can be drawn from clues and the kinds of guesses that should be made.
+            The
+            first point to remember is that there are two kinds of information given by key pegs: their number and their
+            color. Often, the former allows clearer deductions than the latter, as we shall see in the following two
+            examples. The first is taken from <em>The Official Master Mind Handbook</em> by Leslie H. Ault. It will
+            serve as
+            an example of what <em>not</em> to do.</p>
+
+        <p>(In the standard <strong>Master Mind</strong> set, black and white are used both as code peg colors and as
+            key
+            peg colors; to avoid confusion, the diagrams in this discussion use the six colors from <strong>Mini Master
+                Mind</strong>. For code pegs, 🟢 = green, 🔵 = blue, 🔴 = red, 🟡 = yellow, 🟤 = brown, and 🟠 = orange;
+            for key pegs, of course, ⚫ = black and ⚪ = white. If you wish to set these diagrams up on a standard board,
+            just
+            substitute black for brown and white for orange.)</p>
+
+        <table>
+            <caption style="caption-side: bottom;">Diagram 7-25</caption>
+            <tbody>
+                <tr>
+                    <th rowspan="2">Row #</th>
+                    <th colspan="4">Code Pegs</th>
+                    <th rowspan="2">Key Pegs</th>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>🟤</td>
+                    <td>🟠</td>
+                    <td>🟠</td>
+                    <td>🟤</td>
+                    <td>⚪⚪</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>🔵</td>
+                    <td>🟡</td>
+                    <td>🔴</td>
+                    <td>🟢</td>
+                    <td>⚪⚪</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>🔵</td>
+                    <td>🔴</td>
+                    <td>🟤</td>
+                    <td>🟠</td>
+                    <td>⚪⚪⚪</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>🟠</td>
+                    <td>🔴</td>
+                    <td>🟡</td>
+                    <td>🟤</td>
+                    <td>⚫⚪</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>🟢</td>
+                    <td>🟡</td>
+                    <td>🟤</td>
+                    <td>🟠</td>
+                    <td>⚪⚪⚪</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>The key pegs after the first guess in Diagram 7-25 indicated that the codebreaker had three colors right (and
+            one
+            wrong), but none were in the right place. So, for the second row, he quite correctly made an arbitrary
+            assumption—a working hypothesis—that green was incorrect. He moved the other three colors one space to the
+            right
+            and brought in a new color, red. The number of key pegs he received—only <em>two</em> (a <em>decrease</em>
+            from
+            the number in the first row)—instantly revealed his error—or it should have. Why? Simple: He had three
+            correct
+            colors in the first row, only two in the second, <em>and he only changed one color.</em> Therefore, the
+            color he
+            dropped—green—must have been correct, and the color he added—red—could not be.</p>
+
+        <p>His third guess, therefore, was a blunder, since it included red and failed to include green. Nonetheless, it
+            yielded valuable information—again, simply from the <em>number</em> of key pegs. Using the same reasoning as
+            before, we know that the color he added—blue—belongs somewhere in the code, while the color he
+            dropped—yellow—does not. Else how could the number of correct colors increase? (Note, too, that red, which
+            we—but not the codebreaker—disqualified after the second round, cannot correspond to the first black key peg
+            in
+            the second row, since the red peg remained in place, while the black peg disappeared.) In fact, merely from
+            the
+            variation in the number of key pegs on the first three guesses, we can deduce exactly which colors (though
+            not
+            the positions) are in the code: green, brown, orange, and blue. From the second row, remember, we knew green
+            was
+            in and red out, and the three key pegs in the third row mean that all colors <em>but</em> red in the row are
+            correct.</p>
+
+        <p>Our dull-witted codebreaker's fourth guess—which included both the taboo red and yellow—was, therefore,
+            almost a
+            complete waste of time. So was the fifth, since we knew brown and green were in, and, with four colors
+            determined, there could be no doubles. Searching for position could have been done more efficiently if the
+            player had known what colors he was looking for. I don't know if our hapless codebreaker ever did figure out
+            the
+            code, but <em>we</em> can, at least. Brown can't be in positions #1 and #4, or there would have been a black
+            key
+            peg in the fifth row; nor can it be in position #3 (no black key pegs in the first row, either). Therefore,
+            it
+            must be in position #2. (That wasn't so hard, was it?) Again, the first, third, and fifth rows outlaw all
+            positions for orange except the first, which, we see, means that it deserved the black key peg in the second
+            row. That leaves only two positions, and green can't go into position #4 (no black key pegs in the fourth
+            row).
+            Thus, green goes into #3, and blue, by default, enters the #4 slot. The code is 🟠-🟤-🟢-🔵
+            (orange-brown-green-blue).</p>
+
+        <p>The examples that follow come from the Origins '78 (Fourth National Wargaming Convention) tournament or from
+            actual games I have played elsewhere. Unlike our previous player, the codebreaker in the game represented by
+            Diagram 7-26 made some incorrect <em>but logical</em> guesses and used data from his "mistakes" to arrive at
+            the
+            proper conclusion.</p>
+
+        <table>
+            <caption style="caption-side: bottom;">Diagram 7-26</caption>
+            <tbody>
+                <tr>
+                    <th rowspan="2">Row #</th>
+                    <th colspan="4">Code Pegs</th>
+                    <th rowspan="2">Key Pegs</th>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>🔴</td>
+                    <td>🟠</td>
+                    <td>🟢</td>
+                    <td>🟢</td>
+                    <td>⚫⚫⚫⚫</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>🔴</td>
+                    <td>🟢</td>
+                    <td>🔴</td>
+                    <td>🟠</td>
+                    <td>⚫⚪⚪</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>🟤</td>
+                    <td>🟡</td>
+                    <td>🟠</td>
+                    <td>🔴</td>
+                    <td>⚪⚪</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>🟤</td>
+                    <td>🔵</td>
+                    <td>🔴</td>
+                    <td>🟢</td>
+                    <td>⚫⚪</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>🟤</td>
+                    <td>🔴</td>
+                    <td>🟢</td>
+                    <td>🟠</td>
+                    <td>⚫⚪⚪</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>From the information of the first set of key pegs, the codebreaker hypothesized that the brown, red, and
+            green
+            code pegs corresponded to the black, white, and white key pegs for the first row. So, for the second guess,
+            brown stayed where it was; red and green moved; and blue was brought in to try in the place of the
+            (temporarily)
+            rejected orange. Wrong: Since the number of key pegs decreased, orange (the color that left) must be in the
+            code, and the new color, blue, must be out. On the other hand, two of the three original "test" colors
+            (i.e.,
+            brown, red, and green) are correct, and brown still might be in the right spot. Since that left the fourth
+            peg
+            unaccounted for, the codebreaker brought in the last color, yellow; returned orange (but to a different
+            position); discarded blue (permanently) and green (tentatively); moved red again; and retained brown in its
+            slot.</p>
+
+        <p>Wrong again, and this time the absence of a black key peg means that brown has to go (it might still be in
+            the
+            code, but not in the #1 slot). That means that the black key pegs in the first two rows referred to two
+            different code pegs (either two different colors or the same color but in two different positions—indicating
+            a
+            "double"). Which ones? There is no way to tell—not yet. However, the number of key pegs again tells us
+            something. There were <em>two</em> color changes between the second and third rows; from our previous
+            conclusions, though, we know that one switch—replacing the blue with the orange—was correct. Since the
+            number of
+            key pegs (and, therefore, correct code pegs) remained the same, the other switch—replacing the green with
+            the
+            yellow—must be <em>incorrect</em>. So green is in, and both "newcomers" (the two that weren't part of the
+            first
+            row), yellow and blue, go to the reject pile. Since one of the original four colors is incorrect (either red
+            or
+            brown, we can now see), there is obviously a "double" in the code: that is, one of the three colors in the
+            code
+            is duplicated.</p>
+
+        <p>Examine the codebreaker's fourth row carefully. By guessing red for the double, he maximized his
+            informational
+            input.<a href="#note2">[&sup2;]</a> Two key pegs would have meant that brown, not red, was in the code, but
+            the
+            three
+            key pegs he actually got indicated his colors were right; only the double was wrong. Note also the
+            elementary
+            fact that the fourth guess was a <em>possible</em> result: The placement of the pegs was in agreement with
+            all
+            previous clues.</p>
+
+        <p>It was, of course, wrong, but after that guess, a solution on the fifth row was, if not obvious, at least
+            inevitable. Compare only the first and fourth rows. The black key peg cannot refer to the orange code peg
+            (that
+            is, orange cannot occupy the #4 slot), because that leaves no place (no black pegs for any of the other
+            positions) for red. On the other hand, the black key peg in the first row can't be red's, either, for if it
+            is,
+            what can correspond to the black key peg in the fourth row? Not orange (which was sitting in the same
+            position
+            in the first row and couldn't have a black peg), not green (which is sitting in red's slot), and not red,
+            which
+            isn't a duplicate. That, obviously, leaves only green (brown is out, don't forget) for the #3 slot in the
+            first
+            row. Interestingly, that means the black peg in the second row corresponds to a green code peg, also (red
+            would
+            be stealing green's spot, and the other two colors in the row aren't in the code). That gives us the
+            duplicate
+            and its dual position, and the fourth row (again) proves red must be in the #1 position (no other color
+            could
+            deserve a black peg). That leaves orange for the #2 spot, and the code is solved.</p>
+
+        <p>This example demonstrates a key point in code solving: Find a hypothesis that fits the facts, and stick with
+            it
+            until proved wrong. Otherwise, you'll get lost trying to juggle seventeen alternate possibilities
+            simultaneously. There is a second point, also: After the second row, use only guesses that are possible
+            solutions. This may seem obvious, but careful codebreakers do not always follow it.<a
+                href="#note3">[&sup3;]</a>
+        </p>
+
+        <p>Most beginning <strong>Master Mind</strong> players open much like the two codebreakers seen so far: The
+            second
+            row is dependent on the results of the first and the whim of the moment. Most experienced players, however,
+            use
+            a planned opening: a two-row pattern played (almost) regardless of the codemaker's response to the first.
+            (The
+            second row thus becomes, often, a limited use of the "informative impossible.") While I am not wholly
+            convinced
+            that a planned opening is theoretically superior to the standard intuitive development, it does have a
+            couple of
+            practical advantages. To a definite degree, a planned opening provides the same kind of information every
+            time;
+            you know what to expect from it, what to look for. Second, it seems to allow you to draw clearer inferences
+            faster than you normally do with a more haphazard opening, which too often involves juggling dozens of
+            possibilities for three rounds or more. Rather than a fuzzy picture that suddenly becomes clear (like a
+            photograph being developed), the planned opening allows (or forces) you to treat the code as a jigsaw puzzle
+            put
+            together one step at a time. For most people, this is probably easier to learn.</p>
+
+        <p>The two most common planned openings are illustrated in the following pair of diagrams. Diagram 7-27 shows
+            the
+            opening generally described as 1-2-3-4, 5-1-2-3 (where the numbers represent not specific colors but a
+            particular <em>pattern</em> of colors). Note that no attempt is made with this opening to drag in the sixth
+            color until the third row.</p>
+
+        <table>
+            <caption style="caption-side: bottom;">Diagram 7-27</caption>
+            <tbody>
+                <tr>
+                    <th rowspan="2">Row #</th>
+                    <th colspan="4">Code Pegs</th>
+                    <th rowspan="2">Key Pegs</th>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>🔵</td>
+                    <td>🟡</td>
+                    <td>🔴</td>
+                    <td>🟢</td>
+                    <td>⚫⚫⚫⚫</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>🔵</td>
+                    <td>🟠</td>
+                    <td>🟡</td>
+                    <td>🟢</td>
+                    <td>⚫⚫⚪</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>🔵</td>
+                    <td>🟠</td>
+                    <td>🔴</td>
+                    <td>🟤</td>
+                    <td>⚫⚫</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>🟠</td>
+                    <td>🔴</td>
+                    <td>🟤</td>
+                    <td>🟡</td>
+                    <td>⚪⚪</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>The response to the codebreaker's first guess—a pair of white pegs—is the least helpful clue you can get; one
+            peg
+            or three pegs are much better, and of course four pegs are best of all (though no pegs are a close second).
+            Note
+            that the pattern of the second guess invariably sets up the following possibilities: If the number of key
+            pegs
+            goes up, color #4 (in this example, yellow) is not in the code, but color #5 (here, blue) is; if the number
+            of
+            key pegs goes down, the reverse is true (blue's out, yellow's in); if the number of key pegs stays the same,
+            as
+            it did in this example, either <em>both</em> blue and yellow are in the code or <em>neither</em> is. Which
+            is
+            it, then? Obviously, there's no way to tell offhand, but there is a hint. If the number of key pegs involved
+            is
+            three, the odds are that neither color belongs; if there are only two key pegs—or, especially, a single key
+            peg—it is more likely that both colors are in the code.</p>
+
+        <p>For his third row, the codebreaker hypothesized (again, somewhat arbitrarily) that his following two pegs
+            were
+            correct in both color and position. Following the reasoning discussed in the previous paragraph, he brought
+            back
+            yellow in a new position and introduced, finally, the sixth color—here, green. The response of two black key
+            pegs and a white one forced him to reexamine—and reject—his hypothesis. From the two black pegs (only) in
+            the
+            second row, blue and orange were in the right positions or weren't in the code at all. From the two-row
+            opening,
+            either blue and yellow were both in, or neither was, and since the third row yielded three key pegs
+            (impossible
+            if two of the code pegs were not in the code at all), both had to be in. That meant blue belonged in the #1
+            spot
+            and orange was out. From the second row, then, either red or brown was in the code and in the right
+            position.
+            Green and yellow were in, and one of them (only) was properly placed in the third row. The fourth color was
+            red
+            or brown, one of which was in the right position in the second row. In neither case was it possible to tell
+            which was correct; so the code could either be 🔵-🟢-🟡-🟤 (blue-green-yellow-brown) or 🔵-🟡-🔴-🟢
+            (blue-yellow-red-green). In the actual game, the codebreaker
+            fortunately guessed the latter.</p>
+
+        <p>I have concentrated on the techniques of codebreaking because <strong>Master Mind</strong> is very definitely
+            the
+            codebreaker's game. Codemaker tactics are limited to picking a fairly random group of three or four colors.
+            Odd
+            codes with double doubles or a triple play may confuse your opponent momentarily, but any of a large number
+            of
+            guesses will reveal the deceit, and thereafter a codebreaker has only a small number of possibilities to
+            contend
+            with. In addition to the limitations of the unusual code, Diagram 7-28 illustrates the second standard
+            planned
+            opening—1-2-3-4, 5-5-6-6—which works particularly well against doubles.</p>
+
+        <table>
+            <caption style="caption-side: bottom;">Diagram 7-28</caption>
+            <tbody>
+                <tr>
+                    <th rowspan="2">Row #</th>
+                    <th colspan="4">Code Pegs</th>
+                    <th rowspan="2">Key Pegs</th>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>🟢</td>
+                    <td>🟡</td>
+                    <td>🟡</td>
+                    <td>🟡</td>
+                    <td>⚫⚫⚫⚫</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>🟢</td>
+                    <td>🔵</td>
+                    <td>🟢</td>
+                    <td>🔵</td>
+                    <td>⚫</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>🟤</td>
+                    <td>🟤</td>
+                    <td>🟠</td>
+                    <td>🟠</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>🟢</td>
+                    <td>🔵</td>
+                    <td>🔴</td>
+                    <td>🟡</td>
+                    <td>⚫⚫</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Two black key pegs are slightly better than a pair of white ones, if not much. The absence of key pegs for
+            the
+            second row meant that only two colors from the first row were involved, and either one was a triple or both
+            were
+            doubles. As is my habit, I tried the two colors on the left and assumed a double double. (In this example,
+            as in
+            the previous one, I was the codebreaker.) The single black peg in the third row indicated a triple of either
+            red
+            or yellow. I kept the leftmost peg (green rather than blue, a typically arbitrary selection) and tried
+            triple
+            yellow because I thought my opponent might find the color combination more pleasing than the alternative.
+            She
+            did, and I was right.</p>
+
+        <p>Like backgammon—only more so—<strong>Master Mind</strong> is easy enough to learn and quick enough to play to
+            entice almost anyone to try it. My own suggestion is to begin with <strong>Mini Master Mind</strong>: while
+            having fewer rows (six) than the standard ten, it is just as complicated as the regular game and can be kept
+            as
+            a pocket or travel set if you "outgrow" it. From there you can push on to the more elaborate and more
+            flexible
+            <strong>Super Master Mind</strong> (née <strong>Deluxe Master Mind</strong>), which includes eight colors
+            (or
+            nine, with blanks) in five holes and is considerably more complicated. If you're still not sated, you can
+            try
+            sinking your teeth into <strong>Grand Master Mind</strong>, which mixes shapes and colors and has three
+            kinds of
+            key pegs. (But don't say you weren't warned.)
+        </p>
+
+        <p>One of <strong>Master Mind</strong>'s greatest advantages is that this flexibility allows two players of
+            considerably different skill levels to compete on fairly even terms. The better player, for instance, could
+            be
+            forbidden to make codes with duplicates, while his opponent suffered no such prohibition. On a more
+            sophisticated level (and where the gap in skill was greater), with <strong>Super Master Mind</strong>, one
+            side
+            could use more colors (or blanks) and/or more holes than the other. With a bit of experimentation, you
+            should be
+            able to come up with a handicap that allows you and your partner to guess each other's code, on average, in
+            the
+            same number of rows.</p>
+
+        <p>A modern classic, <strong>Master Mind</strong> deserves a spot (or two) on everyone's gameshelf.</p>
+
+        <section>
+
+            <h2>Footnotes</h2>
+
+            <p id="note1">&sup1; In the initial rounds of the Origins '78 (the Fourth National Wargaming Convention)
+                tournament,
+                breaking the code in four rows was common, but averages were higher in the final five-player round
+                robin, and a
+                four-game score there of 18 (a 4.5 row average) was good enough to send two of us into a "sudden death"
+                playoff.
+                After trying at four, I lost the second round—and the championship—by being extended to six guesses.</p>
+
+            <p id="note2">&sup2; Had he doubled one of the others—except brown—he would have been puzzled by a response
+                of
+                three
+                key pegs. Was the double right and red wrong, or was red right and the wrong color duplicated?</p>
+
+            <p id="note3">&sup3; The <em>deliberate</em> use of the "informative impossible"—a code the codebreaker
+                <em>knows</em>
+                cannot be right but which, through the information it yields, is intended to lower the expected solution
+                average
+                by a few percentage points—is a legitimate technique but one which can profitably be pursued only by
+                extremely
+                sophisticated players. The edge it offers is slight, at best, and can be ignored without harm.
+            </p>
+
+        </section>
+
+    </article>
+
+</body>
+
+</html>
